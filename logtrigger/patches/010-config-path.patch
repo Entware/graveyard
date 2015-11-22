@@ -1,0 +1,11 @@
+--- a/trigger.c	2012-08-29 16:24:38.595437817 +0400
++++ b/trigger.c	2012-08-29 16:25:08.187434366 +0400
+@@ -275,7 +275,7 @@
+ 	addFile(files,"OpenWrtLogSharedMemory",NULL,0);
+ 	read_conf_uci("logtrigger");
+ #else
+-	read_conf("/etc/logtrigger/logtrigger.conf");
++	read_conf("/opt/etc/logtrigger/logtrigger.conf");
+ #endif
+ 	int active = files->count;
+ 	while (active>0)
