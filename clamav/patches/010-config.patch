@@ -1,0 +1,86 @@
+--- ./etc/freshclam.conf.orig	2012-10-22 15:53:31.000000000 +0400
++++ ./etc/freshclam.conf	2012-10-22 16:23:30.646298039 +0400
+@@ -5,16 +5,16 @@
+ 
+ 
+ # Comment or remove the line below.
+-Example
++#Example
+ 
+ # Path to the database directory.
+ # WARNING: It must match clamd.conf's directive!
+ # Default: hardcoded (depends on installation options)
+-#DatabaseDirectory /var/lib/clamav
++DatabaseDirectory /opt/share/clamav
+ 
+ # Path to the log file (make sure it has proper permissions)
+ # Default: disabled
+-#UpdateLogFile /var/log/freshclam.log
++UpdateLogFile /opt/var/log/freshclam.log
+ 
+ # Maximum size of the log file.
+ # Value of 0 disables the limit.
+@@ -43,7 +43,7 @@
+ 
+ # This option allows you to save the process identifier of the daemon
+ # Default: disabled
+-#PidFile /var/run/freshclam.pid
++PidFile /opt/var/run/freshclam.pid
+ 
+ # By default when started freshclam drops privileges and switches to the
+ # "clamav" user. This directive allows you to change the database owner.
+--- ./etc/clamd.conf.orig	2012-10-22 15:53:18.000000000 +0400
++++ ./etc/clamd.conf	2012-10-22 16:23:49.402290096 +0400
+@@ -5,13 +5,13 @@
+ 
+ 
+ # Comment or remove the line below.
+-Example
++#Example
+ 
+ # Uncomment this option to enable logging.
+ # LogFile must be writable for the user running daemon.
+ # A full path is required.
+ # Default: disabled
+-#LogFile /tmp/clamd.log
++LogFile /opt/var/log/clamd.log
+ 
+ # By default the log file is locked for writing - the lock protects against
+ # running clamd multiple times (if want to run another clamd, please
+@@ -31,7 +31,7 @@
+ 
+ # Log time with each message.
+ # Default: no
+-#LogTime yes
++LogTime yes
+ 
+ # Also log clean files. Useful in debugging but drastically increases the
+ # log size.
+@@ -58,15 +58,15 @@
+ # This option allows you to save a process identifier of the listening
+ # daemon (main thread).
+ # Default: disabled
+-#PidFile /var/run/clamd.pid
++PidFile /opt/var/run/clamd.pid
+ 
+ # Optional path to the global temporary directory.
+ # Default: system specific (usually /tmp or /var/tmp).
+-#TemporaryDirectory /var/tmp
++TemporaryDirectory /opt/tmp
+ 
+ # Path to the database directory.
+ # Default: hardcoded (depends on installation options)
+-#DatabaseDirectory /var/lib/clamav
++DatabaseDirectory /opt/share/clamav
+ 
+ # Only load the official signatures published by the ClamAV project.
+ # Default: no
+@@ -77,7 +77,7 @@
+ 
+ # Path to a local socket file the daemon will listen on.
+ # Default: disabled (must be specified by a user)
+-#LocalSocket /tmp/clamd.socket
++LocalSocket /opt/tmp/clamd.socket
+ 
+ # Sets the group ownership on the unix socket.
+ # Default: disabled (the primary group of the user running clamd)
