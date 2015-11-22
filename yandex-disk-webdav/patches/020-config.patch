@@ -1,0 +1,14 @@
+--- ./ydw.py.orig2	2014-02-16 19:29:07.630029389 +0400
++++ ./ydw.py	2014-02-16 19:34:48.130022162 +0400
+@@ -32,10 +32,7 @@
+ class Config(object):
+     def __init__(self, path=None):
+         if not path:
+-            path = os.path.join(
+-                os.path.expanduser("~"),
+-                ".yandexwebdavconf"
+-            )
++            path = "/opt/etc/yandexwebdav.conf"
+         if not os.path.exists(path):
+             opt = self.createConfig(path)
+         else:
