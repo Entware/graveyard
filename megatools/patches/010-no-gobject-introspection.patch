@@ -1,0 +1,53 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -41,11 +41,7 @@
+ AC_SUBST(GLIB_MAKEFILE)
+ 
+ # check gobject-introspection
+-AS_IF([test "x$enable_shared" = "xyes"], [
+-  GOBJECT_INTROSPECTION_CHECK([$GOBJECT_INTROSPECTION_VERSION])
+-], [
+-  AM_CONDITIONAL([HAVE_INTROSPECTION], [false])
+-])
++HAVE_INTROSPECTION="false"
+ 
+ # check for gmp
+ AC_CHECK_LIB(gmp,__gmpz_init,, [AC_MSG_ERROR([GNU MP not found, see http://swox.com/gmp])])
+--- a/mega/Makefile.am
++++ b/mega/Makefile.am
+@@ -69,35 +69,3 @@
+ 
+ CLEANFILES =
+ 
+-include $(INTROSPECTION_MAKEFILE)
+-INTROSPECTION_GIRS = Mega-1.0.gir
+-INTROSPECTION_SCANNER_ARGS = --add-include-path=.
+-INTROSPECTION_COMPILER_ARGS = --includedir=.
+-
+-if HAVE_INTROSPECTION
+-
+-gi_libmega_files = $(filter-out mega-enum-types.% mega-marshal.%,$(libmega_la_SOURCES))
+-gi_built_libmega_files = mega-enum-types.h
+-
+-Mega-1.0.gir: libmega.la
+-Mega_1_0_gir_INCLUDES = Gio-2.0
+-Mega_1_0_gir_CFLAGS = $(AM_CFLAGS)
+-Mega_1_0_gir_LIBS = libmega.la
+-Mega_1_0_gir_EXPORT_PACKAGES = libmega
+-Mega_1_0_gir_SCANNERFLAGS = --c-include "mega/mega.h" --warn-all
+-Mega_1_0_gir_FILES = \
+-	$(addprefix $(srcdir)/, $(gi_libmega_files)) \
+-        $(foreach f,$(gi_built_libmega_files), \
+-	   $(if $(shell test -f $(addprefix $(srcdir)/,$(f)) && echo yes), \
+-	      $(addprefix $(srcdir)/,$(f)), \
+-	      $(f)))
+-
+-girdir = $(datadir)/gir-1.0
+-gir_DATA = $(INTROSPECTION_GIRS)
+-
+-typelibdir = $(libdir)/girepository-1.0
+-typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
+-
+-CLEANFILES += $(gir_DATA) $(typelib_DATA)
+-
+-endif
