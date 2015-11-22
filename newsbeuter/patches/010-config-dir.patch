@@ -1,0 +1,7 @@
+--- a/src/controller.cpp	2013-03-19 14:58:39.000000000 +0400
++++ b/src/controller.cpp	2013-03-20 19:34:28.000000000 +0400
+@@ -166,3 +166,3 @@
+ 
+-	config_dir = env_home;
++	config_dir = "/opt/etc";
+ 	config_dir.append(NEWSBEUTER_PATH_SEP);
