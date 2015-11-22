@@ -1,0 +1,11 @@
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -13,7 +13,7 @@
+ SUBDIRS = po $(libgc_dir) eglib mono $(ikvm_native_dir) support data runtime scripts man samples msvc $(docs_dir)
+ # Keep in sync with SUBDIRS
+ ## 'tools' is not normally built
+-DIST_SUBDIRS = m4 po $(libgc_dir) eglib mono ikvm-native support data runtime scripts man samples tools msvc docs
++DIST_SUBDIRS = m4 po $(libgc_dir) eglib mono ikvm-native support data runtime scripts msvc
+ endif
+ 
+ all: update_submodules

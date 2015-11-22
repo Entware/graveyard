@@ -1,0 +1,11 @@
+--- a/libgc/os_dep.c
++++ b/libgc/os_dep.c
+@@ -4207,7 +4207,7 @@
+ 
+ #endif /* NEED_CALLINFO */
+ 
+-#if defined(GC_HAVE_BUILTIN_BACKTRACE)
++#if defined(GC_HAVE_BUILTIN_BACKTRACE) && !defined(__UCLIBC__)
+ # include <execinfo.h>
+ #endif
+ 
