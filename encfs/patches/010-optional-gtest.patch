@@ -1,0 +1,23 @@
+--- ./CMakeLists.txt.orig	2013-03-10 10:31:59.808785975 +0400
++++ ./CMakeLists.txt	2013-03-10 10:45:08.896772166 +0400
+@@ -58,6 +58,11 @@
+ 
+ find_program (POD2MAN pod2man)
+ 
++find_package (GTest)
++if (GTEST_FOUND)
++	enable_testing()
++endif (GTEST_FOUND)
++
+ include_directories (${Encfs_BINARY_DIR})
+ include_directories (${Encfs_SOURCE_DIR})
+ 
+@@ -68,3 +73,8 @@
+ add_subdirectory(util)
+ add_subdirectory(po)
+ 
++# Test target.
++if (GTEST_FOUND)
++    add_custom_target (test COMMAND ${CMAKE_TEST_COMMAND} DEPENDS
++	cipher/cipher-tests fs/fs-tests)
++endif (GTEST_FOUND)
