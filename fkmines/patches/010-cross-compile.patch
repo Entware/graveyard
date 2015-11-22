@@ -1,0 +1,31 @@
+--- a/Makefile
++++ b/Makefile
+@@ -1,11 +1,6 @@
+ GENERATOROBJS = generate.o generator.o
+ MINEOBJS = generate.o mines.o
+ 
+-# DESTDIR is used by Debian
+-prefix = $(DESTDIR)/usr
+-
+-CFLAGS = -Wall -g
+-CC = gcc $(CFLAGS)
+ LIBS = -lncurses
+ 
+ TARGETS = generator mines
+@@ -17,13 +12,13 @@
+ all: $(TARGETS)
+ 
+ mines: $(MINEOBJS)
+-	$(CC) -o $@ $^ $(LIBS)
++	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+ generator: $(GENERATOROBJS)
+-	$(CC) -o $@ $^
++	$(CC) $(LDFLAGS) -o $@ $^
+ 
+ %.o: %.c $(HEADERS)
+-	$(CC) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ clean:
+ 	$(RM) $(OBJS) $(TARGETS)
