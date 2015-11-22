@@ -1,0 +1,11 @@
+--- a/src/platform_unix.cpp
++++ b/src/platform_unix.cpp
+@@ -15,7 +15,7 @@
+ fs::path platform::data_path()
+ {
+     // TODO: do something useful.
+-    return "/etc/hadouken/";
++    return "/opt/etc/hadouken/";
+ }
+ 
+ fs::path platform::application_path()

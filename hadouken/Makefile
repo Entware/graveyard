@@ -8,8 +8,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=hadouken
-PKG_VERSION:=5.2.0-20150926
-PKG_REV:=1928a95158b2ba726641abdc09d801e24fbd1cf9
+PKG_VERSION:=5.1.0-20150721
+#5.2.0-20150926
+PKG_REV:=b2931384e1f085f6e509f82f62e32d7d5324ed57
+#1928a95158b2ba726641abdc09d801e24fbd1cf9
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
@@ -38,21 +40,18 @@ endef
 define Build/Prepare
 	$(call Build/Prepare/Default)
 	$(RM) -fr $(PKG_BUILD_DIR)/deps/libtorrent
-#	for srcfile in `find $(PKG_BUILD_DIR) -type f`; do \
-#	    $(SED) 's|\r||g' $$$$srcfile; \
-#	done;
+	( cd $(PKG_BUILD_DIR)/webui ; mkdir -p ../linux/build/bin ;zip -r ../linux/build/bin/webui.zip . )
 endef
 
-#	for srcfile in `find $(PKG_BUILD_DIR) -name *.?pp`; do \
+define Package/hadouken/postinst
+echo "You will need to change the values for bittorrent.defaultSavePath and bittorrent.statePath"
+echo "in /opt/etc/hadouken/hadouken.json before you start hadouken"
+endef
 
 TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/opt/include \
 	-D_GLIBCXX_USE_C99 \
 	-std=c++11
-
-#[100%] Linking CXX executable bin/hadouken
-#CMakeFiles/hadouken.dir/src/application.cpp.o: In function `hadouken::application::application(boost::shared_ptr<boost::asio::io_service>, boost::property_tree::basic_ptree<std::string, std::string, std::less<std::string> > const&)':
-#application.cpp:(.text+0xb30): undefined reference to `libtorrent::clocktime_nodeprecate_()'
 
 define Package/hadouken/install
 	$(INSTALL_DIR) $(1)/opt/bin

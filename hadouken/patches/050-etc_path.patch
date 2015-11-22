@@ -1,0 +1,11 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -300,7 +300,7 @@
+ if(UNIX)
+     install(TARGETS hadouken DESTINATION bin)
+     install(FILES ${CMAKE_SOURCE_DIR}/linux/build/bin/webui.zip DESTINATION share/hadouken)
+-    install(FILES ${CMAKE_SOURCE_DIR}/dist/linux/hadouken.json.template DESTINATION /etc/hadouken)
++    install(FILES ${CMAKE_SOURCE_DIR}/dist/linux/hadouken.json.template DESTINATION etc/hadouken)
+     install(DIRECTORY ${CMAKE_SOURCE_DIR}/js DESTINATION share/hadouken)
+ 
+     # To generate deb packages.
