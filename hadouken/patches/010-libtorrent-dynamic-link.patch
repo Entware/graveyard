@@ -1,0 +1,11 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -51,7 +51,7 @@
+     set(LIBBOOST libboost_system.a libboost_log.a libboost_program_options.a libboost_filesystem.a libboost_thread.a)
+     set(LIBEXTRAS rt)
+     set(LIBSSL ssl crypto)
+-    set(LIBTORRENT libtorrent-rasterbar.a)
++    set(LIBTORRENT torrent-rasterbar)
+     set(PTHREAD pthread)
+ 
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")

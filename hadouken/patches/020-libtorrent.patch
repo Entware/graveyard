@@ -1,0 +1,36 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -33,8 +33,6 @@
+     )
+ 
+     include_directories(
+-        ${CMAKE_SOURCE_DIR}/deps/libtorrent/include
+-        ${CMAKE_SOURCE_DIR}/deps/libtorrent/ed25519/src
+         ${CMAKE_SOURCE_DIR}/win32/libs/hadouken.boost/include
+         ${CMAKE_SOURCE_DIR}/win32/libs/hadouken.openssl/win32/include
+     )
+@@ -54,14 +52,7 @@
+     set(LIBTORRENT torrent-rasterbar)
+     set(PTHREAD pthread)
+ 
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+-    
+-    if(DEFINED ENV{TRAVIS})
+-        # Disable deprecated warnings (for auto_ptr mainly) on travis
+-        # since there are so many and travis cuts our log output after
+-        # 10k lines.
+-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated")
+-    endif()
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated")
+ endif()
+ 
+ include_directories(
+@@ -108,8 +99,6 @@
+     ${CMAKE_SOURCE_DIR}/include
+ )
+ 
+-set(ltdir ${CMAKE_SOURCE_DIR}/deps/libtorrent)
+-
+ # Get sources for libtorrent
+ set(sources
+     web_connection_base
