@@ -1,0 +1,42 @@
+--- a/linux.h	2013-01-07 22:36:43.007269107 +0400
++++ b/linux.h	2013-01-07 22:37:16.031259926 +0400
+@@ -57,10 +57,6 @@
+ 
+ 
+ 
+-/* Declares the glibc function
+- */
+-int futimes (int fd, const struct timeval tv[2]);
+-
+ /* Set the shake_ptime field and ctime of the file to the actual date.
+  */
+ int set_ptime (int fd);
+--- a/executive.c	2013-01-07 21:42:49.751325310 +0400
++++ b/executive.c	2013-01-07 22:42:10.183262419 +0400
+@@ -36,8 +36,26 @@
+ #include <sys/types.h>		// opendir()
+ #include <dirent.h>		// opendir()
+ #include <sys/time.h>		// futimes()
++#include <sys/syscall.h>
++#include <utime.h>
+ 
+ 
++int futimes(const int fd, const struct timeval tvp[2])
++{
++	struct timespec ts[2], *pts = ts;
++
++	/* Convert timeval to timespec, for syscall */
++
++	if (tvp) {
++		TIMEVAL_TO_TIMESPEC(tvp, ts);
++		TIMEVAL_TO_TIMESPEC(tvp+1, ts+1);
++	} else pts = 0;
++
++	/* Make syscall */
++
++	return utimensat(fd, 0, pts, 0);
++}
++
+ int
+ fcopy (int in_fd, int out_fd, size_t gap, bool stop_if_input_unlocked)
+ {
