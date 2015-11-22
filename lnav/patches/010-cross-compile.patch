@@ -1,0 +1,30 @@
+--- ./configure.ac.orig	2015-07-29 21:29:19.333956125 +0300
++++ ./configure.ac	2015-07-29 21:30:08.017956936 +0300
+@@ -4,27 +4,8 @@
+ AM_INIT_AUTOMAKE([foreign subdir-objects])
+ AM_SILENT_RULES([yes])
+ 
+-AC_PREFIX_DEFAULT(/usr)
+-
+ AC_CANONICAL_HOST
+ 
+-for defdir in /opt/local /usr/local /usr /; do
+-    if test -d "$defdir/include"; then
+-        CPPFLAGS="$CPPFLAGS -I$defdir/include"
+-    fi
+-
+-    if test -d "$defdir/lib"; then
+-        LDFLAGS="$LDFLAGS -L$defdir/lib"
+-    fi
+-    if test -d "$defdir/lib64"; then
+-        LDFLAGS="$LDFLAGS -L$defdir/lib64"
+-    fi
+-
+-    if test -d "$defdir/lib/x86_64-linux-gnu"; then
+-        LDFLAGS="$LDFLAGS -L$defdir/lib/x86_64-linux-gnu"
+-    fi
+-done
+-
+ dnl abssrcdir is the absolute path to the source base (regardless of where
+ dnl you are building it)
+ case x$srcdir in
