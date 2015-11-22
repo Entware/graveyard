@@ -1,0 +1,11 @@
+--- a/ssl_polar.c	2012-08-15 12:44:58.255446986 +0400
++++ b/ssl_polar.c	2012-08-15 12:45:52.691438935 +0400
+@@ -36,7 +36,7 @@
+   check(!ssl_init(&ssl->ctx));
+   ssl_set_endpoint(&ssl->ctx, SSL_IS_CLIENT);
+   ssl_set_authmode(&ssl->ctx, SSL_VERIFY_NONE);
+-  ssl_set_rng(&ssl->ctx, havege_rand, &ssl->hs);
++  ssl_set_rng(&ssl->ctx, havege_random, &ssl->hs);
+   ssl_set_ciphersuites(&ssl->ctx, ssl_default_ciphersuites);
+ }
+ 

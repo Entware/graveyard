@@ -1,0 +1,11 @@
+--- a/pits.c	2012-08-15 12:52:56.907436001 +0400
++++ b/pits.c	2012-08-15 12:53:13.251433472 +0400
+@@ -50,7 +50,7 @@
+ 
+   // Open the configuration file. It keeps state from previous runs and can
+   // also be used by external utilities to configure the CloudPrint proxy.
+-  struct Cfg *cfg = newCfg(".pitsd", 1);
++  struct Cfg *cfg = newCfg("/opt/etc/pitsd.conf", 1);
+   struct JSON *cfgJSON = lockCfgAndGetJSON(cfg);
+   int dirty = 0;
+ 
