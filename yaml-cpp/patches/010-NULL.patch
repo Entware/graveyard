@@ -1,0 +1,10 @@
+--- a/include/yaml-cpp/noncopyable.h
++++ b/include/yaml-cpp/noncopyable.h
+@@ -5,6 +5,7 @@
+ #pragma once
+ #endif
+ 
++#include <stddef.h>
+ #include "yaml-cpp/dll.h"
+ 
+ namespace YAML

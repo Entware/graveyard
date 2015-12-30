@@ -1,0 +1,11 @@
+--- ./Makefile.orig	2015-12-30 13:59:41.357328376 +0300
++++ ./Makefile	2015-12-30 14:05:06.039685333 +0300
+@@ -12,7 +12,7 @@
+ # downloads and builds PDcurses against SDL for convenience.
+ # See 'linux' target if you already have PDCurses built against SDL.
+ default:
+-	$(MAKE) -f Makefile.$@ $@
++	$(MAKE) -f Makefile.nosdl nosdl
+ 
+ # Other ports
+ $(PORTS):

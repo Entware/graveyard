@@ -1,0 +1,13 @@
+--- ./Makefile.common.orig	2015-12-30 14:02:55.633130532 +0300
++++ ./Makefile.common	2015-12-30 14:03:14.961510487 +0300
+@@ -11,8 +11,8 @@
+ DISTNAME = $(ASCIIPORTAL)-$(AP_VERSION)
+ 
+ # Common options to every build
+-CXXFLAGS = -O2 -DAP_VERSION=\"$(AP_VERSION)\"
+-LINKFLAGS = -l yaml-cpp
++CXXFLAGS += -DAP_VERSION=\"$(AP_VERSION)\"
++LINKFLAGS += -l yaml-cpp
+ 
+ # Files to include in releases
+ FILES_INCLUDE_DIST = maps/ media/ README CONTRIBUTE COPYING CHANGELOG pdcicon.bmp map_making_tips.txt

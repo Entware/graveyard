@@ -1,0 +1,10 @@
+--- ./src/ap_maps.cpp.orig	2015-12-30 15:05:17.370489999 +0300
++++ ./src/ap_maps.cpp	2015-12-30 15:05:26.746675144 +0300
+@@ -4,6 +4,7 @@
+ #include <fstream>
+ #include <sstream>
+ #include "yaml-cpp/yaml.h"
++#include "yaml-cpp/parser.h"
+ #include "ap_maps.h"
+ 
+ extern const int CharData [MAXColors][6];
