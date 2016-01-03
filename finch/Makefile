@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2014 Entware
+# Copyright (C) 2011-2015 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -29,7 +29,7 @@ define Package/finch
 	DEPENDS:=+libncursesw +glib2 +libsasl2 +libxml2 +libgnutls +libidn
 	TITLE:=a console-based modular messaging client
 	URL:=http://pidgin.im
-	MAINTAINER:=Entware team, entware.wl500g.info
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/finch/description

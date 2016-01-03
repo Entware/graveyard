@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2013 Entware
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -23,7 +23,7 @@ define Package/fkmines
 	DEPENDS:=+libncurses
 	TITLE:=a minesweeper clone
 	URL:=http://sourceforge.net/projects/fkmines/
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/fkmines/description

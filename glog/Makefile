@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2013 Entware
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -25,7 +25,7 @@ define Package/glog
 	DEPENDS:=+libstdcpp +libpthread
 	TITLE:=application-level logging library
 	URL:=http://code.google.com/p/google-glog/
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/glog/description

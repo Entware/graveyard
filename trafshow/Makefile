@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2012 Entware
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -25,7 +25,7 @@ define Package/trafshow
 	DEPENDS:=+libpcap
 	TITLE:=full screen show network traffic
 	URL:=http://soft.risp.ru/trafshow/index.shtml
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/trafshow/description

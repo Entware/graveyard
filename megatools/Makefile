@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2013 Entware
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -31,7 +31,7 @@ define Package/megatools
 #DEPENDS:=+libneon +libfuse +libopenssl $(ICONV_DEPENDS) $(INTL_DEPENDS)
 	TITLE:=command line client for Mega.co.nz
 	URL:=http://megatools.megous.com/
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/megatools/description

@@ -5,7 +5,7 @@
 # See /LICENSE for more information.
 #
 
-#This package needs http://search.cpan.org/~tobyink/Exporter-Tiny-0.042/lib/Exporter/Tiny.pm
+# This package needs http://search.cpan.org/~tobyink/Exporter-Tiny-0.042/lib/Exporter/Tiny.pm
 
 include $(TOPDIR)/rules.mk
 

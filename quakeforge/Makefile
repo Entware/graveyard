@@ -1,3 +1,10 @@
+#
+# Copyright (C) 2011-2016 Entware
+#
+# This is free software, licensed under the GNU General Public License v2.
+# See /LICENSE for more information.
+#
+# It works, but too heavy for MIPS devices
 
 include $(TOPDIR)/rules.mk
 
@@ -20,6 +27,7 @@ define Package/quakeforge
 	DEPENDS:=+zlib +libncurses
 	TITLE:=A QuakeWorld game engine
 	URL:=http://www.quakeforge.net
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/quakeforge/description

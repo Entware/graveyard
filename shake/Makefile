@@ -29,7 +29,7 @@ define Package/shake
 	DEPENDS:=+libattr
 	TITLE:=FS defragmenter
 	URL:=http://www.vleu.net/shake/
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/shake/description

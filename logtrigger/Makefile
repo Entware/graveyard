@@ -1,10 +1,11 @@
 #
-# Copyright (C) 2011-2012 Entware, 2006 OpenWrt.org
+# (c) 2006 OpenWrt.org
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
-# It can be done with simple shell script, not sure it can be handy
+# It can be replaced with the simple shell script, not sure it can be handy for repo
 
 include $(TOPDIR)/rules.mk
 
@@ -24,7 +25,7 @@ define Package/logtrigger
 #	DEPENDS:=+libncursesw
 	TITLE:=log monitoring tool
 	URL:=https://code.google.com/p/logtrigger/
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/logtrigger/description

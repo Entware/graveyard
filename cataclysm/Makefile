@@ -1,10 +1,8 @@
 #
-# Copyright (C) 2011-2012 Entware
+# Copyright (C) 2011-2015 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
-#
-# Thanks to MercuryV @ wl500g.info
 #
 
 include $(TOPDIR)/rules.mk
@@ -28,7 +26,7 @@ define Package/cataclysm
 	DEPENDS:=+libncurses +libstdcpp
 	TITLE:=a single-player, post-apocalyptic roguelike
 	URL:=https://github.com/Whales/Cataclysm
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/cataclysm/description

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2012 Entware
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -30,7 +30,7 @@ define Package/mp3fs
 	DEPENDS:=+libflac +libfuse +libid3tag +lame-lib
 	TITLE:=transcoding filesystem from FLAC to MP3
 	URL:=http://khenriks.github.com/mp3fs/
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/mp3fs/description

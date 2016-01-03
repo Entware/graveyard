@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2013 Entware
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -26,7 +26,7 @@ define Package/newsbeuter
 	DEPENDS:=$(ICONV_DEPENDS) $(INTL_DEPENDS) +json-c +libstfl +libsqlite3 +libcurl +libxml2 libstdcpp
 	TITLE:=RSS feeds reader
 	URL:=http://www.newsbeuter.org/
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/newsbeuter/description

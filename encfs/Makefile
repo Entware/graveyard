@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2013 Entware
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -28,7 +28,7 @@ define Package/encfs
 #	DEPENDS:=+glog +tinyxml
 	TITLE:=an encrypted filesystem in user-space.
 	URL:=http://www.arg0.net/encfs
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/encfs/description

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2012 Entware
+# Copyright (C) 2011-2016 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -27,7 +27,7 @@ define Package/clamav
 	DEPENDS:=+libbz2 +libncurses +libpthread +libltdl +zlib $(ICONV_DEPENDS)
 	TITLE:=ClamAV antivirus
 	URL:=http://www.clamav.net
-	MAINTAINER:=Entware team, wl500g-repo.googlecode.com
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/clamav/description

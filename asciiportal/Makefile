@@ -7,7 +7,6 @@
 #   p.protocol = node["protocol"].as<int>();
 #
 
-
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=asciiportal
@@ -31,6 +30,7 @@ define Package/asciiportal
 	DEPENDS:=+libncursesw +libstdcpp
 	TITLE:=ASCIIpOrtal game
 	URL:=http://cymonsgames.com/asciiportal/
+	MAINTAINER:=Entware team, http://entware.net
 endef
 
 define Package/asciiportal/description
