@@ -4,6 +4,8 @@
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
+# Some syscalls and socket flags are abset on 2.6.22.
+# http://pastebin.com/PP2XMidW
 
 include $(TOPDIR)/rules.mk
 
