@@ -1,0 +1,11 @@
+--- a/src/src/core_thrp.c
++++ b/src/src/core_thrp.c
+@@ -666,7 +666,7 @@
+ 	if ((uintptr_t)-1 == thrpt->io_fd)
+ 		return (errno);
+ 	/* Init threads message exchange. */
+-	if (-1 == pipe2(thrpt->queue_fd, O_NONBLOCK))
++	if (-1 == pipe(thrpt->queue_fd))
+ 		return (errno);
+ 	thrpt->queue_udata.cb_func = NULL;
+ 	thrpt->queue_udata.ident = thrpt->queue_fd[0];

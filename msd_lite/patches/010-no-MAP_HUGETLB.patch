@@ -1,0 +1,17 @@
+--- a/src/src/core_helpers.c
++++ b/src/src/core_helpers.c
+@@ -88,13 +88,7 @@
+ #endif /* BSD specific code. */
+ 
+ 	mem = mmap(NULL, size, (PROT_READ | PROT_WRITE),
+-	    (flags |
+-#ifdef BSD /* BSD specific code. */
+-	    MAP_ALIGNED_SUPER
+-#endif /* BSD specific code. */
+-#ifdef __linux__ /* Linux specific code. */
+-	    MAP_HUGETLB
+-#endif /* Linux specific code. */
++	    (flags
+ 	    ), fd, 0);
+ 	if (MAP_FAILED == mem) { /* Retry without super/huge pages */
+ 		mem = mmap(NULL, size, (PROT_READ | PROT_WRITE), flags, fd, 0);
