@@ -1,0 +1,11 @@
+--- ./src/perl/module.h.orig	2016-03-30 13:17:59.985375588 +0300
++++ ./src/perl/module.h	2016-03-30 13:18:08.133633995 +0300
+@@ -5,7 +5,7 @@
+ #  ifndef _SEM_SEMUN_UNDEFINED
+ #    define HAS_UNION_SEMUN
+ #  endif
+-#  include <perl.h>
++#include <perl.h>
+ 
+ #  undef _
+ #  undef PACKAGE
