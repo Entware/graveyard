@@ -1,3 +1,10 @@
+#
+# Copyright (C) 2011-2017 Entware
+#
+# This is free software, licensed under the GNU General Public License v2.
+# See /LICENSE for more information.
+#
+
 # Something wrong with yaml-cpp
 #
 #src/ap_maps.cpp:14:21: error: 'Load' is not a member of 'YAML'
