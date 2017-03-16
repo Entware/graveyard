@@ -4,6 +4,8 @@
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
+# [20:53:02.188] xyz.iso prefetch counter corrupt! prefetchCount value is 0 . Upload failed. (torrent.c:536)
+# ...after few minutes of seeding
 
 include $(TOPDIR)/rules.mk
 
