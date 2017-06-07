@@ -1,0 +1,12 @@
+--- a/configure.in
++++ b/configure.in
+@@ -219,7 +219,8 @@
+ fi
+ 
+ if test "$HAVEMETHOD" = "no"; then
+-   AC_MSG_ERROR(cannot figure out how to access libc)
++   AC_MSG_WARN(cannot figure out how to access libc)
++   AC_DEFINE(NODLOPEN)
+ fi
+ 
+ if test "x$sysconfdir" = "x$prefix/etc"; then
