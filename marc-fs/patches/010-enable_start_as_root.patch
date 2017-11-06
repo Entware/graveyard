@@ -1,0 +1,14 @@
+--- a/main.cpp
++++ b/main.cpp
+@@ -170,11 +170,6 @@
+ 
+ int main(int argc, char *argv[])
+ {
+-    if (getuid() == 0 || geteuid() == 0) {
+-        cerr << "Running MARC-FS as root opens unacceptable security holes" << endl;
+-        return -1;
+-    }
+-
+     if (argc < 2) { // didn't send anything?
+         cerr << "No command options specified, ";
+         cerr << "please try -h or --help to get comprehensive list" << endl;
