@@ -1,0 +1,43 @@
+--- a/Makefile
++++ b/Makefile
+@@ -1,11 +1,11 @@
+-CFLAGS		:= -g -O2 -Wall -Wsign-compare
+-INSTALL		:= install
+-DESTDIR		:=
+-ETCDIR		:= /etc
+-BINDIR		:= /bin
+-SBINDIR		:= /sbin
+-MANDIR		:= /usr/share/man
+-SPECFILE	:= redhat/cachefilesd.spec
++CFLAGS		?= -g -O2 -Wall -Wsign-compare
++INSTALL		?= install
++DESTDIR		?=
++ETCDIR		?= /etc
++BINDIR		?= /bin
++SBINDIR		?= /sbin
++MANDIR		?= /usr/share/man
++SPECFILE	?= redhat/cachefilesd.spec
+ 
+ LNS		:= ln -sf
+ 
+@@ -23,15 +23,6 @@
+ # Guess at the appropriate word size
+ #
+ ###############################################################################
+-BUILDFOR	:= $(shell file /usr/bin/make | sed -e 's!.*ELF \(32\|64\)-bit.*!\1!')-bit
+-
+-ifeq ($(BUILDFOR),32-bit)
+-CFLAGS		+= -m32
+-else
+-ifeq ($(BUILDFOR),64-bit)
+-CFLAGS		+= -m64
+-endif
+-endif
+ 
+ ###############################################################################
+ #
+@@ -128,4 +119,3 @@
+ show_vars:
+ 	@echo VERSION=$(VERSION)
+ 	@echo TARBALL=$(TARBALL)
+-	@echo BUILDFOR=$(BUILDFOR)

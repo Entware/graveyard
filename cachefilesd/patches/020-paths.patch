@@ -1,0 +1,26 @@
+--- a/cachefilesd.c
++++ b/cachefilesd.c
+@@ -107,10 +107,10 @@
+ static unsigned long long b_released_since_last_scan;
+ 
+ 
+-static const char *configfile = "/etc/cachefilesd.conf";
++static const char *configfile = "/opt/etc/cachefilesd.conf";
+ static const char *devfile = "/dev/cachefiles";
+ static const char *procfile = "/proc/fs/cachefiles";
+-static const char *pidfile = "/var/run/cachefilesd.pid";
++static const char *pidfile = "/opt/var/run/cachefilesd.pid";
+ static char *cacheroot, *graveyardpath;
+ 
+ static bool culling_disabled;
+--- a/cachefilesd.conf
++++ b/cachefilesd.conf
+@@ -10,7 +10,7 @@
+ #
+ ###############################################################################
+ 
+-dir /var/cache/fscache
++dir /opt/var/cache/fscache
+ tag mycache
+ brun 10%
+ bcull 7%
