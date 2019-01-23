@@ -1,0 +1,24 @@
+diff --git a/engine/engine.c b/engine/engine.c
+index 73c8745..a042721 100644
+--- a/engine/engine.c
++++ b/engine/engine.c
+@@ -677,18 +677,7 @@ static int f_parse_option_engine (int val) {
+   return 0;
+ }
+ 
+-static void parse_option_engine_builtin (const char *name, int arg, int *var, int val, unsigned flags, const char *help, ...) __attribute__ ((format (printf, 6, 7)));
+-static void parse_option_engine_builtin (const char *name, int arg, int *var, int val, unsigned flags, const char *help, ...) {
+-  char *h;
+-  va_list ap;
+-  va_start (ap, help);
+-  assert (vasprintf (&h, help, ap) >= 0);
+-  va_end (ap);
+-
+-  parse_option_ex (name, arg, var, val, flags, f_parse_option_engine, h);
+-
+-  free (h);
+-}
++#define parse_option_engine_builtin(name, arg, var, val, flags, help...) parse_option_ex (name, arg, var, val, flags, f_parse_option_engine, help)
+ 
+ void engine_add_engine_parse_options (void) {
+   parse_option_engine_builtin ("cpu-threads", required_argument, 0, 227, LONGOPT_JOBS_SET, "Number of CPU threads (1-64, default 8)");

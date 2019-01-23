@@ -1,0 +1,12 @@
+diff --git a/jobs/jobs.h b/jobs/jobs.h
+index 56522e5..e867e74 100644
+--- a/jobs/jobs.h
++++ b/jobs/jobs.h
+@@ -24,6 +24,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <semaphore.h>
++#include <pthread.h>
+ #include "net/net-events.h"
+ #include "net/net-msg.h"
+ #include "net/net-timers.h"

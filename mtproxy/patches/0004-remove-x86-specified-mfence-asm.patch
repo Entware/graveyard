@@ -1,0 +1,15 @@
+diff --git a/common/server-functions.h b/common/server-functions.h
+index 874b4e0..681b3b1 100644
+--- a/common/server-functions.h
++++ b/common/server-functions.h
+@@ -110,9 +110,7 @@ static inline void barrier (void) {
+   asm volatile("": : :"memory");
+ }
+ 
+-static inline void mfence (void) {
+-  asm volatile ("mfence": : :"memory");
+-}
++#define mfence __sync_synchronize
+ 
+ //extern struct multicast_host multicast_hosts[];
+ //extern int multicast_hosts_num;

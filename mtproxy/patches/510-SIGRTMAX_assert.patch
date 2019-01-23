@@ -1,0 +1,11 @@
+--- ./engine/engine.c.orig	2019-01-23 17:06:20.118802651 +0300
++++ ./engine/engine.c	2019-01-23 17:06:41.883457657 +0300
+@@ -573,7 +573,7 @@
+ 
+   precise_now_diff = get_utime_monotonic () - get_double_time ();
+ 
+-  assert (SIGRTMAX == OUR_SIGRTMAX);
++//  assert (SIGRTMAX == OUR_SIGRTMAX);
+   assert (SIGRTMAX - SIGRTMIN >= 20);
+   
+   E->sfd = 0;
