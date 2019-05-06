@@ -1,0 +1,13 @@
+--- a/OS/Makefile-Base
++++ b/OS/Makefile-Base
+@@ -129,8 +129,8 @@
+ 
+ # Targets for special-purpose configuration header builders
+ buildconfig: buildconfig.c
+-	@echo "$(CC) buildconfig.c"
+-	$(FE)$(CC) $(CFLAGS) $(INCLUDE) -o buildconfig buildconfig.c $(LIBS)
++	@echo "$(HOSTCC_WRAPPER) buildconfig.c"
++	$(FE)$(HOSTCC_WRAPPER) $(INCLUDE) -o buildconfig buildconfig.c
+ 
+ 
+ # Target for the exicyclog utility script

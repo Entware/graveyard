@@ -1,0 +1,22 @@
+--- a/src/buildconfig.c
++++ b/src/buildconfig.c
+@@ -545,19 +545,6 @@
+       return 1;
+       }
+ 
+-    /* security sanity checks
+-    if ref: is being used, we can never be sure, but we can take reasonable
+-    steps to filter out the most obvious ones.  */
+-
+-    if ((!uid_not_set && uid == 0) ||
+-        ((username != NULL) && (
+-          (strcmp(username, "root") == 0) ||
+-          (strcmp(username, "toor") == 0) )))
+-      {
+-      printf("\n*** Exim's internal user must not be root.\n\n");
+-      return 1;
+-      }
+-
+     /* Output user and group names or uid/gid. When names are set, uid/gid
+     are set to zero but will be replaced at runtime. */
+ 
