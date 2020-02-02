@@ -1,0 +1,31 @@
+--- a/dlnaproxy.c
++++ b/dlnaproxy.c
+@@ -192,7 +192,7 @@
+ 	struct sigaction sa;
+ 	/*const char * logfilename = 0;*/
+ 	const char * presurl = 0;
+-	const char * optionsfile = "/etc/dlnaproxy.conf";
++	const char * optionsfile = "/opt/etc/dlnaproxy.conf";
+ 	char mac_str[13];
+ 	char * string, * word;
+ 	char * path;
+--- a/upnpglobalvars.c
++++ b/upnpglobalvars.c
+@@ -59,7 +59,7 @@
+ struct runtime_vars_s runtime_vars;
+ int runtime_flags = INOTIFY_MASK;
+ 
+-const char * pidfilename = "/var/run/dlnaproxy.pid";
++const char * pidfilename = "/opt/var/run/dlnaproxy.pid";
+ 
+ char uuidvalue[] = "uuid:00000000-0000-0000-0000-000000000000";
+ char modelname[MODELNAME_MAX_LEN] = ROOTDEV_MODELNAME;
+@@ -74,7 +74,7 @@
+ struct lan_addr_s lan_addr[MAX_LAN_ADDR];
+ 
+ /* Path of the Unix socket used to communicate with MiniSSDPd */
+-const char * minissdpdsocketpath = "/var/run/minissdpd.sock";
++const char * minissdpdsocketpath = "/opt/var/run/minissdpd.sock";
+ 
+ /* UPnP-A/V [DLNA] */
+ char friendly_name[FRIENDLYNAME_MAX_LEN];
