@@ -1,0 +1,459 @@
+diff -ur duplicity-0.8.18.orig/bin/duplicity duplicity-0.8.18/bin/duplicity
+--- duplicity-0.8.18.orig/bin/duplicity	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/bin/duplicity	2021-04-06 20:13:05.327453946 +0300
+@@ -26,10 +26,6 @@
+ # Please send mail to me or the mailing list if you find bugs or have
+ # any suggestions.
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+-
+ import json
+ import os
+ import sys
+diff -ur duplicity-0.8.18.orig/bin/rdiffdir duplicity-0.8.18/bin/rdiffdir
+--- duplicity-0.8.18.orig/bin/rdiffdir	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/bin/rdiffdir	2021-04-06 20:13:12.152071179 +0300
+@@ -26,7 +26,6 @@
+ # Please send mail to me or the mailing list if you find bugs or have
+ # any suggestions.
+ 
+-from __future__ import print_function
+ from builtins import str
+ import sys
+ import getopt
+diff -ur duplicity-0.8.18.orig/duplicity/asyncscheduler.py duplicity-0.8.18/duplicity/asyncscheduler.py
+--- duplicity-0.8.18.orig/duplicity/asyncscheduler.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/asyncscheduler.py	2021-04-06 20:35:16.681704220 +0300
+@@ -25,8 +25,6 @@
+ dependency guarantees.
+ """
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import object
+ import duplicity
+ from duplicity import log
+diff -ur duplicity-0.8.18.orig/duplicity/backend.py duplicity-0.8.18/duplicity/backend.py
+--- duplicity-0.8.18.orig/duplicity/backend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backend.py	2021-04-06 20:36:22.721824178 +0300
+@@ -24,8 +24,6 @@
+ intended to be used by the backends themselves.
+ """
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import str
+ from builtins import range
+ from builtins import object
+diff -ur duplicity-0.8.18.orig/duplicity/backends/adbackend.py duplicity-0.8.18/duplicity/backends/adbackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/adbackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/adbackend.py	2021-04-06 20:14:52.796066184 +0300
+@@ -19,8 +19,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import print_function
+-from __future__ import division
+ from builtins import input
+ import os.path
+ import json
+diff -ur duplicity-0.8.18.orig/duplicity/backends/b2backend.py duplicity-0.8.18/duplicity/backends/b2backend.py
+--- duplicity-0.8.18.orig/duplicity/backends/b2backend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/b2backend.py	2021-04-06 20:37:14.870139776 +0300
+@@ -23,8 +23,6 @@
+ # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ # THE SOFTWARE.
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import object
+ 
+ from urllib.parse import quote_plus  # pylint: disable=import-error
+diff -ur duplicity-0.8.18.orig/duplicity/backends/_boto_multi.py duplicity-0.8.18/duplicity/backends/_boto_multi.py
+--- duplicity-0.8.18.orig/duplicity/backends/_boto_multi.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/_boto_multi.py	2021-04-06 20:37:32.986287509 +0300
+@@ -20,9 +20,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import division
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import range
+ 
+ import os
+diff -ur duplicity-0.8.18.orig/duplicity/backends/_boto_single.py duplicity-0.8.18/duplicity/backends/_boto_single.py
+--- duplicity-0.8.18.orig/duplicity/backends/_boto_single.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/_boto_single.py	2021-04-06 20:36:39.837908543 +0300
+@@ -19,7 +19,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import division
+ from builtins import str
+ from concurrent.futures import ThreadPoolExecutor
+ import os
+diff -ur duplicity-0.8.18.orig/duplicity/backends/dpbxbackend.py duplicity-0.8.18/duplicity/backends/dpbxbackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/dpbxbackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/dpbxbackend.py	2021-04-06 20:14:27.262214083 +0300
+@@ -25,10 +25,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import print_function
+-from __future__ import division
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import input
+ from builtins import str
+ import io
+diff -ur duplicity-0.8.18.orig/duplicity/backends/gdocsbackend.py duplicity-0.8.18/duplicity/backends/gdocsbackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/gdocsbackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/gdocsbackend.py	2021-04-06 20:15:05.564953722 +0300
+@@ -18,9 +18,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import input
+ from builtins import str
+ import os.path
+diff -ur duplicity-0.8.18.orig/duplicity/backends/imapbackend.py duplicity-0.8.18/duplicity/backends/imapbackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/imapbackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/imapbackend.py	2021-04-06 20:37:02.598050293 +0300
+@@ -20,8 +20,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import input
+ 
+ import email
+diff -ur duplicity-0.8.18.orig/duplicity/backends/lftpbackend.py duplicity-0.8.18/duplicity/backends/lftpbackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/lftpbackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/lftpbackend.py	2021-04-06 20:37:52.458465751 +0300
+@@ -24,9 +24,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+-
+ import os
+ import os.path
+ import re
+diff -ur duplicity-0.8.18.orig/duplicity/backends/megabackend.py duplicity-0.8.18/duplicity/backends/megabackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/megabackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/megabackend.py	2021-04-06 20:14:45.867574093 +0300
+@@ -19,10 +19,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+-
+ from duplicity import util
+ from duplicity.errors import BackendException
+ import duplicity.backend
+diff -ur duplicity-0.8.18.orig/duplicity/backends/megav2backend.py duplicity-0.8.18/duplicity/backends/megav2backend.py
+--- duplicity-0.8.18.orig/duplicity/backends/megav2backend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/megav2backend.py	2021-04-06 20:14:34.314736400 +0300
+@@ -18,10 +18,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+-
+ from duplicity import util
+ from duplicity.errors import BackendException
+ import duplicity.backend
+diff -ur duplicity-0.8.18.orig/duplicity/backends/multibackend.py duplicity-0.8.18/duplicity/backends/multibackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/multibackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/multibackend.py	2021-04-06 20:37:40.090350261 +0300
+@@ -23,8 +23,6 @@
+ 
+ #
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ import os
+ import os.path
+ import sys
+diff -ur duplicity-0.8.18.orig/duplicity/backends/ncftpbackend.py duplicity-0.8.18/duplicity/backends/ncftpbackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/ncftpbackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/ncftpbackend.py	2021-04-06 20:37:46.506409214 +0300
+@@ -19,8 +19,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ import os.path
+ import urllib.request  # pylint: disable=import-error
+ import urllib.parse  # pylint: disable=import-error
+diff -ur duplicity-0.8.18.orig/duplicity/backends/onedrivebackend.py duplicity-0.8.18/duplicity/backends/onedrivebackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/onedrivebackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/onedrivebackend.py	2021-04-06 20:14:20.741723583 +0300
+@@ -22,8 +22,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import print_function
+-from __future__ import division
+ from past.utils import old_div
+ from builtins import input
+ from builtins import str
+diff -ur duplicity-0.8.18.orig/duplicity/backends/pyrax_identity/hubic.py duplicity-0.8.18/duplicity/backends/pyrax_identity/hubic.py
+--- duplicity-0.8.18.orig/duplicity/backends/pyrax_identity/hubic.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/pyrax_identity/hubic.py	2021-04-06 20:15:12.561429736 +0300
+@@ -3,9 +3,6 @@
+ # Copyright (c) 2014 Gu1
+ # Licensed under the MIT license
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import str
+ 
+ import configparser
+diff -ur duplicity-0.8.18.orig/duplicity/backends/rclonebackend.py duplicity-0.8.18/duplicity/backends/rclonebackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/rclonebackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/rclonebackend.py	2021-04-06 20:37:08.982095742 +0300
+@@ -19,9 +19,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+-
+ import os
+ import os.path
+ 
+diff -ur duplicity-0.8.18.orig/duplicity/backends/rsyncbackend.py duplicity-0.8.18/duplicity/backends/rsyncbackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/rsyncbackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/rsyncbackend.py	2021-04-06 20:14:57.708410566 +0300
+@@ -19,7 +19,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import print_function
+ from builtins import map
+ import os
+ import re
+diff -ur duplicity-0.8.18.orig/duplicity/backends/ssh_paramiko_backend.py duplicity-0.8.18/duplicity/backends/ssh_paramiko_backend.py
+--- duplicity-0.8.18.orig/duplicity/backends/ssh_paramiko_backend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/ssh_paramiko_backend.py	2021-04-06 20:37:19.902178999 +0300
+@@ -21,7 +21,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from __future__ import division
+ from builtins import input
+ from builtins import oct
+ from builtins import zip
+diff -ur duplicity-0.8.18.orig/duplicity/backends/ssh_pexpect_backend.py duplicity-0.8.18/duplicity/backends/ssh_pexpect_backend.py
+--- duplicity-0.8.18.orig/duplicity/backends/ssh_pexpect_backend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/ssh_pexpect_backend.py	2021-04-06 20:38:00.186541746 +0300
+@@ -24,9 +24,6 @@
+ # have the same syntax.  Also these strings will be executed by the
+ # shell, so shouldn't have strange characters in them.
+ 
+-from __future__ import division
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import map
+ 
+ import os
+diff -ur duplicity-0.8.18.orig/duplicity/backends/webdavbackend.py duplicity-0.8.18/duplicity/backends/webdavbackend.py
+--- duplicity-0.8.18.orig/duplicity/backends/webdavbackend.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/backends/webdavbackend.py	2021-04-06 20:37:25.954228028 +0300
+@@ -21,8 +21,6 @@
+ # along with duplicity; if not, write to the Free Software Foundation,
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import str
+ from builtins import range
+ import base64
+diff -ur duplicity-0.8.18.orig/duplicity/commandline.py duplicity-0.8.18/duplicity/commandline.py
+--- duplicity-0.8.18.orig/duplicity/commandline.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/commandline.py	2021-04-06 20:13:21.724918908 +0300
+@@ -21,9 +21,6 @@
+ 
+ u"""Parse command line, check for consistency, and set config"""
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import str
+ from builtins import range
+ 
+diff -ur duplicity-0.8.18.orig/duplicity/diffdir.py duplicity-0.8.18/duplicity/diffdir.py
+--- duplicity-0.8.18.orig/duplicity/diffdir.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/diffdir.py	2021-04-06 20:35:57.533737773 +0300
+@@ -26,10 +26,7 @@
+ first, the signature or delta is constructed of a ROPath iterator.  In
+ the second, the ROPath iterator is put into tar block form.
+ """
+-from __future__ import division
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import map
+ from builtins import next
+ from builtins import str
+diff -ur duplicity-0.8.18.orig/duplicity/dup_main.py duplicity-0.8.18/duplicity/dup_main.py
+--- duplicity-0.8.18.orig/duplicity/dup_main.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/dup_main.py	2021-04-06 20:13:40.918558198 +0300
+@@ -25,9 +25,6 @@
+ # Please send mail to me or the mailing list if you find bugs or have
+ # any suggestions.
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import map
+ from builtins import next
+ from builtins import object
+diff -ur duplicity-0.8.18.orig/duplicity/dup_temp.py duplicity-0.8.18/duplicity/dup_temp.py
+--- duplicity-0.8.18.orig/duplicity/dup_temp.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/dup_temp.py	2021-04-06 20:13:35.206078496 +0300
+@@ -21,9 +21,6 @@
+ 
+ u"""Manage temporary files"""
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import object
+ 
+ import os
+diff -ur duplicity-0.8.18.orig/duplicity/dup_threading.py duplicity-0.8.18/duplicity/dup_threading.py
+--- duplicity-0.8.18.orig/duplicity/dup_threading.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/dup_threading.py	2021-04-06 20:35:44.653712248 +0300
+@@ -28,8 +28,6 @@
+ at least python 2.5.)
+ """
+ 
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import object
+ import sys
+ from duplicity import errors
+diff -ur duplicity-0.8.18.orig/duplicity/dup_time.py duplicity-0.8.18/duplicity/dup_time.py
+--- duplicity-0.8.18.orig/duplicity/dup_time.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/dup_time.py	2021-04-06 20:36:09.121771704 +0300
+@@ -20,7 +20,6 @@
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+ u"""Provide time related exceptions and functions"""
+-from __future__ import division
+ 
+ from past.utils import old_div
+ from builtins import map
+diff -ur duplicity-0.8.18.orig/duplicity/lazy.py duplicity-0.8.18/duplicity/lazy.py
+--- duplicity-0.8.18.orig/duplicity/lazy.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/lazy.py	2021-04-06 20:13:59.204049243 +0300
+@@ -21,8 +21,6 @@
+ 
+ u"""Define some lazy data structures and functions acting on them"""
+ 
+-from __future__ import print_function
+-
+ from builtins import map
+ from builtins import next
+ from builtins import range
+diff -ur duplicity-0.8.18.orig/duplicity/log.py duplicity-0.8.18/duplicity/log.py
+--- duplicity-0.8.18.orig/duplicity/log.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/log.py	2021-04-06 20:35:24.849699548 +0300
+@@ -22,7 +22,6 @@
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+ u"""Log various messages depending on verbosity level"""
+-from __future__ import division
+ 
+ from builtins import str
+ from builtins import object
+diff -ur duplicity-0.8.18.orig/duplicity/path.py duplicity-0.8.18/duplicity/path.py
+--- duplicity-0.8.18.orig/duplicity/path.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/path.py	2021-04-06 20:13:28.893540416 +0300
+@@ -26,9 +26,6 @@
+ 
+ """
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import str
+ from builtins import object
+ 
+diff -ur duplicity-0.8.18.orig/duplicity/progress.py duplicity-0.8.18/duplicity/progress.py
+--- duplicity-0.8.18.orig/duplicity/progress.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/progress.py	2021-04-06 20:36:32.481869859 +0300
+@@ -32,8 +32,6 @@
+ This is a forecast based on gathered evidence.
+ """
+ 
+-from __future__ import absolute_import
+-from __future__ import division
+ from builtins import object
+ 
+ from datetime import datetime, timedelta
+diff -ur duplicity-0.8.18.orig/duplicity/statistics.py duplicity-0.8.18/duplicity/statistics.py
+--- duplicity-0.8.18.orig/duplicity/statistics.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/statistics.py	2021-04-06 20:36:03.605754300 +0300
+@@ -20,7 +20,6 @@
+ # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ 
+ u"""Generate and process backup statistics"""
+-from __future__ import division
+ 
+ from builtins import zip
+ from builtins import map
+diff -ur duplicity-0.8.18.orig/duplicity/tarfile.py duplicity-0.8.18/duplicity/tarfile.py
+--- duplicity-0.8.18.orig/duplicity/tarfile.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/tarfile.py	2021-04-06 20:35:30.229699694 +0300
+@@ -20,8 +20,6 @@
+ 
+ u"""Like system tarfile but with caching."""
+ 
+-from __future__ import absolute_import
+-
+ import tarfile
+ from duplicity import cached_ops
+ 
+diff -ur duplicity-0.8.18.orig/duplicity/tempdir.py duplicity-0.8.18/duplicity/tempdir.py
+--- duplicity-0.8.18.orig/duplicity/tempdir.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/tempdir.py	2021-04-06 20:13:46.887052216 +0300
+@@ -26,9 +26,6 @@
+ The public interface of this module is thread-safe.
+ """
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import object
+ 
+ import os
+diff -ur duplicity-0.8.18.orig/duplicity/util.py duplicity-0.8.18/duplicity/util.py
+--- duplicity-0.8.18.orig/duplicity/util.py	2021-01-09 20:35:26.000000000 +0300
++++ duplicity-0.8.18/duplicity/util.py	2021-04-06 20:13:53.219568546 +0300
+@@ -23,9 +23,6 @@
+ Miscellaneous utilities.
+ """
+ 
+-from __future__ import print_function
+-from future import standard_library
+-standard_library.install_aliases()
+ from builtins import isinstance
+ from builtins import map
+ from builtins import object
