@@ -1,0 +1,22 @@
+--- a/src/include/gsh_rpc.h
++++ b/src/include/gsh_rpc.h
+@@ -104,7 +104,7 @@ void freenetconfigent(struct netconfig *
+ /**
+  * @brief default value for krb5_param.keytab
+  */
+-#define DEFAULT_NFS_KEYTAB "/etc/krb5.keytab"
++#define DEFAULT_NFS_KEYTAB "/opt/etc/krb5.keytab"
+ 
+ #ifdef _HAVE_GSSAPI
+ /**
+--- a/src/FSAL/FSAL_PROXY/export.c
++++ b/src/FSAL/FSAL_PROXY/export.c
+@@ -68,7 +68,7 @@ static struct config_item proxy_export_p
+ #ifdef _USE_GSSRPC
+ 	CONF_ITEM_STR("Remote_PrincipalName", 0, MAXNAMLEN, NULL,
+ 		      pxy_client_params, remote_principal),
+-	CONF_ITEM_STR("KeytabPath", 0, MAXPATHLEN, "/etc/krb5.keytab"
++	CONF_ITEM_STR("KeytabPath", 0, MAXPATHLEN, "/opt/etc/krb5.keytab"
+ 		      pxy_client_params, keytab),
+ 	CONF_ITEM_UI32("Credential_LifeTime", 0, 86400*2, 86400,
+ 		       pxy_client_params, cred_lifetime),

@@ -1,0 +1,20 @@
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -185,7 +185,6 @@ if (MSVC)
+ endif(MSVC)
+ 
+ # Library path name
+-get_property(USE_LIB64 GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS)
+ if (USE_LIB64)
+ 	set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib64 CACHE PATH
+ 		"Specify name of libdir inside install path")
+--- a/src/libntirpc/CMakeLists.txt
++++ b/src/libntirpc/CMakeLists.txt
+@@ -37,7 +37,6 @@ set( PACKNAME "${NTIRPC_VERSION}" )
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ 
+ # Install destination, if built standalone
+-get_property(USE_LIB64 GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS)
+ if (USE_LIB64)
+ 	set(LIB_INSTALL_DIR lib64 CACHE PATH
+ 		"Specify name of libdir inside install path")
