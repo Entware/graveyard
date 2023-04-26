@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+. /opt/etc/bypass.conf
+
+if [ "$1" = "start" ]; then
+    ipset create $SET_NAME hash:ip
+    ipset add $SET_NAME $DNS
+    ip rule add fwmark 1001 table 1001
+    ipset-dns $SET_NAME $SET_NAME 0.0.0.0:5353 $DNS
+fi
